@@ -1,0 +1,742 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0b0b0d; 
+    color: #ffffff; /* Faz com que todo o texto padrão seja branco */
+    padding-top: 100px; /* Ajuste esse valor conforme a altura do seu cabeçalho */
+}
+
+/* Cabeçalho com efeito Glassmorphism */
+.header-opus {
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(18, 18, 20, 0.85); /* Fundo escuro levemente transparente */
+    backdrop-filter: blur(12px); /* Desfoque de fundo premium */
+    border-bottom: 1px solid rgba(137, 190, 225, 0.2); /* Borda sutil com sua cor #89bee1 */
+    padding: 12px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Estilização da Logo */
+.logo img {
+    height: 80px; 
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Menu de Navegação */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #d1d1d1; /* Cinza claro para contraste */
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover usando sua cor #89bee1 */
+.nav-links li a:hover {
+    color: #89bee1;
+    text-shadow: 0 0 8px rgba(137, 190, 225, 0.4);
+}
+
+/* Botão de Destaque com sua cor secundária */
+.btn-personalizar {
+    background: linear-gradient(135deg, #89bee1 0%, #5a96bd 100%); 
+    color: #0b0b0d !important; /* Texto escuro para melhor leitura sobre o azul claro */
+    padding: 10px 24px !important;
+    border-radius: 4px; /* Bordas levemente arredondadas para um look mais sério/automotivo */
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(137, 190, 225, 0.3);
+    transition: all 0.3s ease !important;
+    text-decoration: none;
+}
+
+.btn-personalizar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(137, 190, 225, 0.5);
+    filter: brightness(1.1);
+}
+
+/* Responsividade Geral */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* Estilos de Formulários Padrão (Fallback) */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: #89bee1;
+}
+
+select, input {
+    padding: 15px;
+    border-radius: 7px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* ==========================================================================
+   SEÇÃO: Página Inicial (Index) - Estilos Isolados
+   ========================================================================== */
+.index-main {
+    text-align: center;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.index-slogan {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.index-text {
+    font-size: 1.1rem;
+    color: #a1a1a6;
+    max-width: 600px;
+    margin: 15px auto;
+    line-height: 1.6;
+}
+
+.index-price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #89bee1;
+    margin: 35px auto;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(137, 190, 225, 0.2);
+}
+
+.index-img {
+    display: block;
+    max-width: 90%;
+    width: 850px;
+    height: auto;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
+                0 0 50px rgba(137, 190, 225, 0.03);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.index-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 
+                0 0 60px rgba(137, 190, 225, 0.12);
+}
+
+.index-main .btn-personalizar {
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .index-main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .index-slogan {
+        font-size: 1.8rem;
+    }
+    .index-price {
+        font-size: 1.4rem;
+    }
+    .index-text {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   SEÇÃO: Tela de Login / Cadastro (login.php)
+   ========================================================================== */
+.login-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 40px 20px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(137, 190, 225, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.login-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.login-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #89bee1;
+    letter-spacing: 0.5px;
+}
+
+.login-input {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login-input:focus {
+    border-color: #89bee1;
+    box-shadow: 0 0 8px rgba(137, 190, 225, 0.3);
+    background-color: #222;
+}
+
+.btn-submit-login {
+    width: 100%;
+    background: linear-gradient(135deg, #89bee1 0%, #5a96bd 100%);
+    color: #0b0b0d;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 15px rgba(137, 190, 225, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-submit-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(137, 190, 225, 0.4);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   SEÇÃO: Tela de Perfil (perfil.php)
+   ========================================================================== */
+.perfil-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 40px 20px;
+}
+
+.perfil-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(137, 190, 225, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.perfil-avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.perfil-avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 2px solid #89bee1;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(137, 190, 225, 0.25);
+}
+
+.perfil-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.perfil-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.perfil-info-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.perfil-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #89bee1;
+    margin-bottom: 4px;
+}
+
+.perfil-value {
+    display: block;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.perfil-btn {
+    display: block;
+    width: 100%;
+    margin-top: 0 !important;
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .perfil-card {
+        padding: 30px 20px;
+    }
+    .perfil-avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* ==========================================================================
+   SEÇÃO: Tela de Confirmação de Compra (compra.php)
+   ========================================================================== */
+.compra-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 140px);
+    padding: 40px 20px;
+}
+
+.compra-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(137, 190, 225, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.compra-card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.compra-resumo {
+    font-size: 1.1rem;
+    color: #a1a1a6;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.compra-resumo .destaque {
+    color: #89bee1;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.compra-imagens {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.compra-imagens .img-box {
+    flex: 1;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.compra-imagens .img-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #89bee1;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.compra-imagens img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.compra-imagens img:hover {
+    transform: scale(1.03);
+}
+
+/* Bloco exclusivo para exibir as observações no resumo do pedido */
+.compra-obs-container {
+    background: rgba(137, 190, 225, 0.04);
+    border-left: 3px solid #89bee1;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.compra-obs-title {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #89bee1;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.compra-obs-text {
+    font-size: 14px;
+    color: #d1d1d1;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .compra-card {
+        padding: 30px 15px;
+    }
+    .compra-imagens {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================================================
+   CONFIGURADOR ULTRA-MINIMALIST DARK (car persona.php)
+   ========================================================================== */
+
+/* Garante a centralização perfeita na tela */
+.conteudo-principal {
+    margin-top: 100px; /* Evita que fique sob o header fixo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Card do Formulário com efeito Vidro Escuro Premium (Glassmorphism) */
+.container-form {
+    background: rgba(18, 18, 20, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(137, 190, 225, 0.15); /* Brilho sutil azul na borda */
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 520px;
+    width: 100%;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+.container-form h2 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Sobrescreve o comportamento flex padrão para o formulário do configurador */
+.container-form form {
+    max-width: 100%;
+    background: transparent;
+    padding: 0;
+    gap: 0;
+}
+
+/* Labels Minimalistas e Sofisticadas */
+.container-form label.form-section-title {
+    display: block;
+    color: #8e8e93;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+}
+
+/* Estilização Premium para Selects e Textarea */
+.container-form select,
+.container-form textarea {
+    width: 100%;
+    background-color: #121214;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e5e5ea;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Inserção de uma seta minimalista customizada via SVG */
+.container-form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2389bee1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.container-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* Estado de Foco (Quando o usuário clica no campo) */
+.container-form select:focus,
+.container-form textarea:focus {
+    border-color: #89bee1;
+    background-color: #16161a;
+    box-shadow: 0 0 0 4px rgba(137, 190, 225, 0.15);
+}
+
+/* Grupo de Customização dos Opcionais (Radio) */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+/* Transforma a label do Radio em um card clicável de alta fidelidade */
+.container-form .radio-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 14px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: #e5e5ea;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-top: 0;
+    transition: all 0.25s ease;
+    width: 100%;
+    font-weight: 400;
+}
+
+.container-form .radio-card:hover {
+    background: rgba(137, 190, 225, 0.04);
+    border-color: rgba(137, 190, 225, 0.25);
+}
+
+/* Customização do botão interno (Checkbox/Radio) */
+.container-form input[type="radio"],
+.container-form input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #121214;
+    margin: 0 12px 0 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px; /* Mudei para 4px para ficar levemente quadrado como um checkbox real, se preferir redondo volte para 50% */
+    display: grid;
+    place-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.container-form input[type="radio"]::before,
+.container-form input[type="checkbox"]::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 2px; /* Mudei para 2px para combinar com o checkbox quadrado */
+    transform: scale(0);
+    transition: 0.2s transform ease;
+    background-color: #89bee1;
+}
+
+.container-form input[type="radio"]:checked,
+.container-form input[type="checkbox"]:checked {
+    border-color: #89bee1;
+    box-shadow: 0 0 8px rgba(137, 190, 225, 0.4);
+}
+
+.container-form input[type="radio"]:checked::before,
+.container-form input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* O BOTÃO SUBMIT PREMIUM (.btn-enviar) */
+.btn-enviar {
+    width: 100%;
+    background-color: #89bee1;
+    color: #0b0b0d;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-top: 35px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(137, 190, 225, 0.2);
+}
+
+.btn-enviar:hover {
+    background-color: #a3d2f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(137, 190, 225, 0.45);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(137, 190, 225, 0.2);
+}
+
+/* Container para isolar o novo botão */
+.perfil-links-adicionais {
+    margin-top: -10px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Botão de registros (Estilo Outline Premium) */
+.btn-logs {
+    display: block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(137, 190, 225, 0.25);
+    color: #89bee1;
+    padding-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Efeito Hover com brilho sutil */
+.btn-logs:hover {
+    background: rgba(137, 190, 225, 0.08);
+    border-color: #89bee1;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(137, 190, 225, 0.5);
+    box-shadow: 0 4px 15px rgba(137, 190, 225, 0.15);
+    transform: translateY(-1px);
+}
